@@ -1,0 +1,9 @@
+keras
+tensorflow
+jupyter
+numpy
+sklearn
+spacy
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.0.0/en_core_web_sm-2.0.0.tar.gz
+git+https://www.github.com/keras-team/keras-contrib.git#egg=keras-contrib
+git+https://github.com/NervanaSystems/nlp-architect.git#egg=nlp_architect

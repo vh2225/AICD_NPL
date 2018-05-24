@@ -1,0 +1,70 @@
+/* Format all words in 12px Helvetica and grey */
+
+.displacy-word {
+    font: 12px Helvetica, Arial, sans-serif;
+    color: grey;
+}
+
+
+/* Make all noun phrases (tags that start with "NN") green */
+
+.displacy-tag[data-tag^="NN"] {
+    color: green;
+}
+
+
+/* Make all right arrows red and hide their labels */
+
+.displacy-arc[data-dir="right"],
+.displacy-arrowhead[data-dir="right"] {
+    color: red;
+}
+
+.displacy-label[data-dir="right"] {
+    display: none;
+}
+
+
+/* Hide all tags for verbs (tags that start with "VB") that are NOT the base form ("VB") */
+
+.displacy-tag[data-tag^="VB"]:not([data-tag="VB"]) {
+    display: none;
+}
+
+
+/* Only display tags if word is hovered (with smooth transition) */
+
+.displacy-tag {
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.displacy-word:hover + .displacy-tag {
+    opacity: 1;
+}
+
+.entities {
+    line-height: 2;
+}
+
+[data-entity] {
+    padding: 0.25em 0.35em;
+     margin: 0px 0.25em;
+     line-height: 1;
+     display: inline-block;
+     border-radius: 0.25em;
+     border: 1px solid;
+}
+
+[data-entity]::after {
+    box-sizing: border-box;
+    content: attr(data-entity);
+    font-size: 0.6em;
+    line-height: 1;
+    padding: 0.35em;
+    border-radius: 0.35em;
+    text-transform: uppercase;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0px 0px 0.1rem 0.5rem;
+}
